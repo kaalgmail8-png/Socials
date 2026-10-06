@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: transparent;
+            margin: 0;
+            padding: 10px;
+            width: 480px; /* Largeur réduite pour s'adapter à des encadrés plus petits */
+            font-family: 'Cinzel', serif, sans-serif;
+            overflow: hidden;
+            display: flex;
+            flex-direction: row;
+            gap: 10px; /* Espace réduit entre les deux encadrés */
+        }
+
+        /* Encadré individuel plus compact */
+        .social-box {
+            position: relative;
+            background: linear-gradient(145deg, rgba(14, 14, 14, 0.7), rgba(6, 6, 6, 0.78));
+            backdrop-filter: blur(3px);
+            border-top: 1.5px solid rgba(136, 136, 136, 0.4);
+            border-left: 1.5px solid rgba(102, 102, 102, 0.4);
+            border-right: 1.5px solid rgba(34, 34, 34, 0.4);
+            border-bottom: 1.5px solid rgba(17, 17, 17, 0.4);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6), 
+                        0 0 10px rgba(180, 0, 0, 0.1),
+                        inset 0 0 10px rgba(255, 255, 255, 0.01);
+            padding: 6px 10px; /* Padding réduit pour affiner l'encadré */
+            display: flex;
+            align-items: center;
+            gap: 8px; /* Espace réduit entre le logo et le texte */
+            box-sizing: border-box;
+            flex: 1;
+        }
+
+        /* Liserés lumineux rouge sang latéraux */
+        .social-box::before, .social-box::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 1.5px;
+            background: linear-gradient(to bottom, rgba(255, 26, 26, 0.6), rgba(128, 0, 0, 0.4), rgba(255, 26, 26, 0.6));
+            box-shadow: 0 0 5px rgba(255, 26, 26, 0.2);
+        }
+        .social-box::before { left: 0; }
+        .social-box::after { right: 0; }
+
+        /* Encoches tech aux coins plus petites */
+        .tech-notch {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            border: 1.5px solid rgba(255, 26, 26, 0.4);
+            z-index: 2;
+        }
+        .notch-tl { top: -1.5px; left: -1.5px; border-right: none; border-bottom: none; }
+        .notch-tr { top: -1.5px; right: -1.5px; border-left: none; border-bottom: none; }
+        .notch-bl { bottom: -1.5px; left: -1.5px; border-right: none; border-top: none; }
+        .notch-br { bottom: -1.5px; right: -1.5px; border-left: none; border-top: none; }
+
+        /* Logo SVG réduit */
+        .social-icon {
+            width: 16px; /* Taille réduite */
+            height: 16px;
+            fill: rgba(255, 77, 77, 0.9);
+            filter: drop-shadow(0 0 3px rgba(255, 26, 26, 0.4));
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
+        }
+        .social-icon svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Handle / Pseudo plus discret et ajusté */
+        .social-handle {
+            font-size: 11px; /* Police légèrement plus petite */
+            color: rgba(238, 238, 238, 0.95);
+            letter-spacing: 0.8px;
+            font-weight: 600;
+            text-shadow: 0 0 3px rgba(255, 26, 26, 0.25);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Encadré : Twitch -->
+    <div class="social-box">
+        <div class="tech-notch notch-tl"></div>
+        <div class="tech-notch notch-tr"></div>
+        <div class="tech-notch notch-bl"></div>
+        <div class="tech-notch notch-br"></div>
+        <div class="social-icon">
+            <svg viewBox="0 0 24 24"><path d="M11.571 4.714h1.714v5.143H11.571zm4.714 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.428l-3 3v-3H6.857V1.714h13.714z"/></svg>
+        </div>
+        <span class="social-handle">@Kaal_88</span>
+    </div>
+
+    <!-- Encadré : YouTube -->
+    <div class="social-box">
+        <div class="tech-notch notch-tl"></div>
+        <div class="tech-notch notch-tr"></div>
+        <div class="tech-notch notch-bl"></div>
+        <div class="tech-notch notch-br"></div>
+        <div class="social-icon">
+            <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </div>
+        <span class="social-handle">@Kaal_88</span>
+    </div>
+
+</body>
+</html>
